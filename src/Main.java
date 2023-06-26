@@ -12,12 +12,13 @@ public class Main {
 
     public static void task1() {
         System.out.println("Задача 1");
+        int targetTotal = 2_459_000;
         int saving = 15000;
         int total = 0;
         int months = 0;
-        while (total < 2_459_000) {
+        while (total < targetTotal) {
             total = total + saving;
-            months = months + 1;
+            months++;
             System.out.println("Месяц " + months + " , сумма накоплений равна " + total + " рублей");
         }
     }
@@ -26,47 +27,53 @@ public class Main {
         System.out.println("Задача 2");
         int a = 0;
         while (a < 10) {
-            a = a + 1;
-            System.out.print(a + " ");}
+            a++;
+            System.out.print(a + " ");
+        }
         System.out.println();
-        for (; a > 0;a = a - 1) {
-            System.out.print(a + " ");}
+        for (; a > 0; a--) {
+            System.out.print(a + " ");
+        }
     }
 
     public static void task3() {
         System.out.println("Задача 3");
+        int yearsWatched = 10;
         int population = 12000;
-        int years = 1;
         int deathRatePerThousand = 8;
         int birthRatePerThousand = 17;
-        for (; years <= 10; years++) {
+        for (int years = 1; years <= yearsWatched; years++) {
             population = population - ((population / 1000) * deathRatePerThousand) + ((population / 1000) * birthRatePerThousand);
-            System.out.println("Год " + years + " , численность населения составляет " + population);}
+            System.out.println("Год " + years + " , численность населения составляет " + population);
+        }
     }
 
     public static void task4() {
         System.out.println("Задача 4");
+        double totalTarget = 12_000_000;
         double total = 15_000;
         double interest = 0.07;
         double interestCoeff = 1 + interest;
         int months = 0;
-        while (total < 12_000_000) {
+        while (total < totalTarget) {
             total = total * interestCoeff;
-            months = months + 1;
-            System.out.printf("Месяц " + months + " накоплено %.2f",total);
-            System.out.println();}
+            months++;
+            System.out.printf("Месяц " + months + " накоплено %.2f", total);
+            System.out.println();
+        }
     }
 
     public static void task5() {
         System.out.println("Задача 5");
+        double totalTarget = 12_000_000;
         double total = 15_000;
         double interest = 0.07;
         double interestCoeff = 1 + interest;
         int months = 0;
-        while (total < 12_000_000) {
+        while (total < totalTarget) {
             total = total * interestCoeff;
             months = months + 1;
-            if (months % 6 == 0 || total > 12_000_000) {
+            if (months % 6 == 0 || total >= totalTarget) {
                 System.out.printf("Месяц " + months + " накоплено %.2f", total);
                 System.out.println();
             }
@@ -85,9 +92,10 @@ public class Main {
         while (months < depositTerm) {
             total = total * interestCoeff;
             months = months + 1;
-            if (months % 6 == 0 || months == depositTerm){
-                System.out.printf("Месяц " + months + " накоплено %.2f",total);
-                System.out.println();}
+            if (months % 6 == 0 || months == depositTerm) {
+                System.out.printf("Месяц " + months + " накоплено %.2f", total);
+                System.out.println();
+            }
         }
     }
 
@@ -97,7 +105,8 @@ public class Main {
         int monthLength = 31;
         while (fridayCount <= monthLength) {
             System.out.println("Сегодня пятница, " + fridayCount + "-е число, нужно сдать отчет");
-            fridayCount += 7; }
+            fridayCount += 7;
+        }
     }
 
     public static void task8() {
@@ -107,9 +116,10 @@ public class Main {
         int yearsAfter = 100;
         int cometAppearsIn = 79;
 
-        for (int i = 8; i < currentYear + yearsAfter; i += cometAppearsIn) {
+        for (int i = 0; i < currentYear + yearsAfter; i += cometAppearsIn) {
             if (i > currentYear - yearsBefore) {
-                System.out.println(i);}
+                System.out.println(i);
             }
         }
     }
+}
